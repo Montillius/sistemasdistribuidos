@@ -3,7 +3,7 @@ from datetime import datetime
 
 
 def server_program():
-    host = '10.0.0.203'
+    host = socket.gethostname()
     # um nome de host é um rótulo atribuído a um dispositivo conectado a uma rede de computadores é usado
     # para identificar o dispositivo
 
@@ -40,19 +40,15 @@ def server_program():
         # Este método é usado para converter de um esquema de codificação, no qual a string de argumento é
         # codificada para o esquema de codificação desejado.
 
-        data_sistema_americano = datetime.now()
-        data_sistema_format = data_sistema_americano.strftime('%d/%m/%Y %H:%M:%S')
-        # Configuração da hora do envio e recebimento das mensagens
 
         if not data:
             # O data irá receber a mensagem do cliente, se os dados não forem recebidos irá executar o break
             break
         print("O usuário conectado enviou: " + str(data))
-        print('Hora atual do servidor ' + data_sistema_format)
-        # Irá printar  a mensagem enviada pelo cliente e a hora atual do sistema
+        # Irá printar  a mensagem enviada pelo cliente
 
-        data = input(' -> ') + (' Hora da mensagem: ' + data_sistema_format)
-        # data que recebe a mensagem do servidor para enviar pro cliente, juntamente do horário
+        data = input(' -> ')
+        # variável que recebe a mensagem do servidor para enviar pro cliente
         conn.send(data.encode())
         # envia a mensagem do servidor para o cliente
 
