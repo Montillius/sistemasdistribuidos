@@ -26,7 +26,11 @@ def client_program():
         # o loop encerrará. O metofo lower transforma todos os caracteres em minusculos e o strip procura dentro
         # da mensagem o texto que foi especificado
 
-        client_socket.send(message.encode())
+        if message == '':
+            message = '\n'
+            client_socket.send(message.encode())
+        else:
+            client_socket.send(message.encode())
         # envia a mensagem do cliente para o servidor
 
         data = client_socket.recv(1024).decode()

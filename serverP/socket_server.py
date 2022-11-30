@@ -1,5 +1,4 @@
 import socket
-from datetime import datetime
 
 
 def server_program():
