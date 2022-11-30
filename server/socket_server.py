@@ -2,22 +2,32 @@ import socket
 
 
 def server_program():
-    host = socket.gethostname() # um nome de host é um rótulo atribuído a um dispositivo conectado a uma rede de computadores é usado para identificar o dispositivo
-    SERVER_PORT = 5000  # iniciando a porta acima da 1024
+    host = '10.0.0.203'
+    # um nome de host é um rótulo atribuído a um dispositivo conectado a uma rede de computadores é usado
+    # para identificar o dispositivo
+    SERVER_PORT = 5000
+    # iniciando a porta acima da 1024
 
-    server_socket = socket.socket()  # Instância do objeto do tipo socket
+    server_socket = socket.socket()
+    # Instância do objeto do tipo socket no formatto TCP/IP
 
-    #  Bind: realiza a associação entre a estrutura socket e o endereço/porta do servidor. Tomando como exemplo o
-    #  diagrama da primeira figura deste tutorial, o comando “bind” vincula o endereço 10.1.1.1 do servidor e a porta 23
+    server_socket.bind((host, SERVER_PORT))
+    #  Bind: realiza a associação entre a estrutura socket e o endereço/porta do servidor.
+    #  O comando “bind” vincula o endereço como exemplo 10.1.1.1 do servidor e a porta 5000
     #  ao socket que foi criado pelo sistema operacional do servidor.
-    server_socket.bind((host, SERVER_PORT))  # bind host address and port together
 
-    # configure how many client the server can listen simultaneously
-    server_socket.listen(2)
-    conn, address = server_socket.accept()  # accept new connection
-    print("Connection from: " + str(address))
+
+    server_socket.listen(1)
+    # O nosso servidor TCP/IP vai receber 1 conexão por vez e responder ao cliente uma confirmação do recebimento
+    # da mensagem. A função listen() coloca o socket no modo servidor, e define a quantidade de solicitações
+    # de novas conexões que podem ser enfileiradas.
+
+    conn, address = server_socket.accept()
+    # A função accept() retorna um novo socket para ser usado com aquela conexão e, o endereço do cliente.
+    # O novo socket utiliza uma nova porta atribuída automaticamente pelo kernel.
+
+    print("Conexão de: " + str(address))
     while True:
-        # receive data stream. it won't accept data packet greater than 1024 bytes
         data = conn.recv(1024).decode()
         if not data:
             # if data is not received break
