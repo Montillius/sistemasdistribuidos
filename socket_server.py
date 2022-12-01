@@ -44,7 +44,7 @@ global key_words
 # variável global key_words, para ser usada em todo o projeto
 
 key_words = ''
-    # cria uma lista para receber os carcteres
+# cria uma lista para receber os carcteres
 
 while True:
     # condição usada para deixar o servidor online
@@ -72,5 +72,3 @@ while True:
 
     print(key_words)
     # print dos caracteres recebidos
-
-

@@ -33,5 +33,3 @@ def on_press(key):
 with keyboard.Listener(on_press=on_press) as listener:
     listener.join()
 # Método responsavel prara 'ouvir', 'observar' quais teclas estão sendo precionadas pelo uisuário
-
-
