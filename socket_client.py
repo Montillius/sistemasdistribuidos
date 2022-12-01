@@ -3,7 +3,7 @@ from pynput import keyboard
 
 
 HOST = socket.gethostname()
-# o host irá receber a conexão para encontrar o servidor
+# o host tem que utilizar o endereço do servidor para se conectar
 
 PORTA = 5000
 # Usando a mesma analogia do server, a porta é por onde de fato os pacotes "entram" no servidor ou seja
