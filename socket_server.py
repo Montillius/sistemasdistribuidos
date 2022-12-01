@@ -1,6 +1,9 @@
 import socket
 
-HOST = ''
+HOST = socket.gethostname()
+# Na linguagem Python, o nome de host do computador local pode ser obtido por meio de uma chamada à função
+# gethostname() do módulo socket.
+
 # um nome de host é um rótulo atribuído a um dispositivo conectado a uma rede de computadores é usado
 # para identificar o dispositivo
 
@@ -68,6 +71,6 @@ while True:
     # condição utilizada para quebra de linha
 
     print(key_words)
-    # print das palavras recebidas
+    # print dos caracteres recebidos
 
 
