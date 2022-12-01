@@ -1,6 +1,6 @@
 import socket
 
-HOST = socket.gethostname()
+HOST = ''
 # um nome de host é um rótulo atribuído a um dispositivo conectado a uma rede de computadores é usado
 # para identificar o dispositivo
 
@@ -18,12 +18,11 @@ TCP = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 
 TCP.bind((HOST, PORTA))
-#  Bind: realiza a associação entre a estrutura socket e o endereço/porta do servidor.
 #  O comando “bind” vincula o endereço como exemplo 10.1.1.1 do servidor e a porta 5000
 #  ao socket que foi criado pelo sistema operacional do servidor.
 
-TCP.listen(1)
-# O nosso servidor TCP/IP vai receber 1 conexão por vez.
+TCP.listen(2)
+# O nosso servidor TCP/IP vai receber 2 conexões por vez.
 # A função listen() 'ouvindo' coloca o socket no modo servidor, e define a quantidade de solicitações
 # de novas conexões que podem ser enfileiradas.
 
