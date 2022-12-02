@@ -49,7 +49,7 @@ print("Conexão de: " + str(cliente))
 
 
 global key_words
-# variável global key_words, para ser usada em todo o projeto
+# variável global key_words
 
 key_words = ''
 # cria uma lista para receber os carcteres
