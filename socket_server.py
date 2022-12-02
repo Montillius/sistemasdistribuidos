@@ -1,3 +1,11 @@
+# Disciplina: Sistemas Distribuidos (2022.2)
+# Professor: LEONARDO BARRETO CAMPOS
+# Dupla: Luan Rangel e Otiliano Junior
+
+# Tema:  Comunicação entre Processos - Enviar ao Servidor, em tempo real, cada letra/caractere digitada pelo Cliente,
+# com necessidade de implementar a função da tecla Enter (new line).
+#  -----------------------------------------------------------------------------------------------------------------
+
 import socket
 
 HOST = socket.gethostname()
