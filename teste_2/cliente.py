@@ -62,7 +62,7 @@ def ativos(servidores):
         return ativos
 
 
-trials = sys.argv
+trials = sys.argv[0]
 # recebe do parametro do usuario o numero maximo de tentativas
 
 print("Verificando servidores ativos")
