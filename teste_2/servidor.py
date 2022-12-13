@@ -8,7 +8,7 @@ from socket import *
 # funcao que faz o calculo do numero de pontos
 def pi(trials):
     hits = 0
-    for i in range(trials):
+    for i in xrange(trials):
         x = random.random()
         y = random.random()
         if (((x * x) + (y * y)) < 1):
@@ -16,8 +16,8 @@ def pi(trials):
     return hits
 
 
-HOST = ''
-PORT = 2343
+HOST = '192.168.1.110'
+PORT = 7777
 
 s = socket(AF_INET, SOCK_STREAM)  
 # cria um socket

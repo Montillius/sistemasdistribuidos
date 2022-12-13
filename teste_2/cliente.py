@@ -3,7 +3,7 @@ import sys
 import time
 from threading import Thread
 
-PORT = 2343
+PORT = 7777
 
 
 class cliente(Thread):
@@ -68,7 +68,7 @@ trials = sys.argv[0]
 print("Verificando servidores ativos")
 # verifica o numero de servidores ativos
 
-servidores = ativos(['192.168.200.14', '200.135.240.1', '192.168.200.11', '192.168.200.5'])
+servidores = ativos(['192.168.1.110', '200.135.240.1', '192.168.200.11', '192.168.200.5'])
 
 if len(servidores) == 0:
     print("Nao existem servidores ativos")
