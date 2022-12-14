@@ -27,8 +27,8 @@ for tcp in tcpSockets:
     clients.append(client)
     print('Conectado por ', clients[index])
 
-resul_parcial1 = float(conns[0].recv(4096))
-resul_parcial2 = float(conns[1].recv(4096))
+resul_parcial1 = str(conns[0].recv(16384))
+resul_parcial2 = str(conns[1].recv(16384))
 
 print("\nValor parcial da equação recebido do client 01: ", resul_parcial1)
 print("\nValor parcial da equação recebido do client 02: ", resul_parcial2)

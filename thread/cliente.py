@@ -1,7 +1,7 @@
 import socket
 import threading
 
-HOST = socket.gethostname()
+HOST = '10.0.0.206'
 # o host tem que utilizar o endereço do servidor para se conectar
 
 PORTA = 5003
