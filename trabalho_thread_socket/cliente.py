@@ -40,10 +40,10 @@ def thread_function(start, end):
 # Cria as threads
 thread1 = threading.Thread(target=thread_function, args=(1, 250))
 
-# Inicia as threads
+# Inicia as thread
 thread1.start()
 
-# Aguarda que as threads termine
+# Aguarda que a threadstermine
 thread1.join()
 
 

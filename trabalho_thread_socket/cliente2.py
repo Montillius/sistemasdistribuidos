@@ -1,7 +1,7 @@
 import socket
 import threading
 
-HOST = socket.gethostname()
+HOST = '10.0.0.206'
 # o host tem que utilizar o endereço do servidor para se conectar
 
 PORTA = 5004
@@ -39,10 +39,10 @@ def thread_function(start, end):
 # Cria as threads
 thread2 = threading.Thread(target=thread_function, args=(251, 500))
 
-# Inicia as threads
+# Inicia as thread
 thread2.start()
 
-# Aguarda que a threads termine
+# Aguarda que a thread termine
 thread2.join()
 
 
