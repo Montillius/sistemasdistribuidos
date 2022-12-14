@@ -1,14 +1,14 @@
 import random  
 # gerador de numeros aleatorios
 
-from socket import *  
+import socket
 # sockets
 
 
 # funcao que faz o calculo do numero de pontos
 def pi(trials):
     hits = 0
-    for i in xrange(trials):
+    for i in range(trials):
         x = random.random()
         y = random.random()
         if (((x * x) + (y * y)) < 1):
@@ -16,10 +16,10 @@ def pi(trials):
     return hits
 
 
-HOST = '192.168.1.110'
+HOST = socket.gethostname()
 PORT = 7777
 
-s = socket(AF_INET, SOCK_STREAM)  
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 # cria um socket
 
 s.bind((HOST, PORT))  

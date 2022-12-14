@@ -1,4 +1,4 @@
-from socket import *
+import socket
 import sys
 import time
 from threading import Thread
@@ -29,7 +29,7 @@ class cliente(Thread):
         print("thread do ip " + str(self.ip) + " iniciou")
         # abre a conexao com o servidor
 
-        s = socket(AF_INET, SOCK_STREAM)
+        s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         s.connect((self.ip, PORT))
         # envia para o servidor o numero de tentativas
 
@@ -50,7 +50,7 @@ def ativos(servidores):
     for ip in servidores:
         try:
             print("testando " + str(ip))
-            s = socket(AF_INET, SOCK_STREAM)
+            s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             s.connect((ip, PORT))
             s.send("PING")
             # manda um comando ping para ver se o servidor ainda esta ativo
@@ -68,7 +68,7 @@ trials = sys.argv[0]
 print("Verificando servidores ativos")
 # verifica o numero de servidores ativos
 
-servidores = ativos(['192.168.1.110', '200.135.240.1', '192.168.200.11', '192.168.200.5'])
+servidores = ativos([socket.gethostname()])
 
 if len(servidores) == 0:
     print("Nao existem servidores ativos")
