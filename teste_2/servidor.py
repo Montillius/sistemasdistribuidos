@@ -1,8 +1,8 @@
-import random  
+import random
 # gerador de numeros aleatorios
 
 import socket
-# sockets
+
 
 
 # funcao que faz o calculo do numero de pontos
@@ -22,33 +22,35 @@ PORT = 7777
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 # cria um socket
 
-s.bind((HOST, PORT))  
+s.bind((HOST, PORT))
 # conecta o socket na porta
 
-s.listen(1)  
+s.listen(1)
 # fica esperando conexoes
 
 print('Escutando conexoes')
 while 1:
-    conn, addr = s.accept() 
+    conn, addr = s.accept()
     # recebe uma conexao
-    
-    data = conn.recv(1024)  
+
+    data_b = conn.recv(1024)
     # recebe o dado enviado pelo cliente
-    
-    if data == "PING":  
+
+    data = data_b.decode('utf-8')
+    # convertendo de byte para string, os dados das mensagens são convertidos em binário durante a trasnmição clinete
+
+    if data == "PING":
         # se o comando recebido foi um ping
         print("ping recebido")
-        
-    else:  
+
+    else:
         # senao a informacao recebida eh o numero de tentativas
-        
         print("Calculando para o cliente " + str(addr[0]))
-        hits = pi(int(data))  
+        hits = pi(int(data))
         # calcula o numero de pontos usando o numero de tentativas recebidas do cliente
         print(hits)
-        conn.send(str(hits))  
+        conn.send(str(hits).encode())
         # retorna ao cliente o numero de pontos
-        
-        conn.close()  
+
+        conn.close()
         # fecha a conexao

@@ -52,7 +52,7 @@ def ativos(servidores):
             print("testando " + str(ip))
             s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             s.connect((ip, PORT))
-            s.send("PING")
+            s.send("PING".encode())
             # manda um comando ping para ver se o servidor ainda esta ativo
             s.close()
             ativos.append(ip)
@@ -68,7 +68,7 @@ trials = sys.argv[0]
 print("Verificando servidores ativos")
 # verifica o numero de servidores ativos
 
-servidores = ativos([socket.gethostname()])
+servidores = ativos([socket.gethostname(), '198.23.2.2', '200.21.12.2', '198.56.25.2'])
 
 if len(servidores) == 0:
     print("Nao existem servidores ativos")
