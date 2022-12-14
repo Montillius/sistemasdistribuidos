@@ -45,7 +45,7 @@ for i in range(2):
     # de novas conexões que podem ser enfileiradas.
 
     lista_server_socket.append(server_socket)
-    # adciona o socket do sercer na lista
+    # adciona o socket server na lista
 
 print("Servidor rodando...")
 
@@ -54,8 +54,12 @@ for server_socket in lista_server_socket:
     con, client = server_socket.accept()
     # A função accept() retorna um novo socket para ser usado com aquela conexão e, o endereço do cliente.
     # neste caso sera executado para cada conexão que possuir na lista de sockets
+
     lista_conns.append(con)
+    # adciona a conexao na lista
+
     lista_clients.append(client)
+    # adciona o cliente na lista
 
     print('Conectado por ', lista_clients[index])
     # Ao estabelecer uma conexão com o clinte irá printar está conexão pro servidor
