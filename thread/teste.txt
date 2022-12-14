@@ -1,0 +1,38 @@
+import socket
+import threading
+
+# cria um socket do tipo TCP
+sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
+# liga o socket a uma porta local
+sock.bind(('localhost', 8000))
+
+# habilita o socket a aceitar conexões
+sock.listen()
+
+# armazena os resultados parciais das raízes quadradas enviados pelos clientes
+results = []
+
+# função que será executada em uma thread para tratar cada conexão de cliente
+def handle_client(conn, addr):
+  # recebe o valor parcial da raiz quadrada enviado pelo cliente
+  result = conn.recv(1024)
+
+  # adiciona o valor parcial à lista de resultados
+  results.append(result)
+
+  # envia uma mensagem de confirmação para o cliente
+  conn.send(b'Received')
+
+# loop infinito para aceitar conexões de clientes
+while True:
+  # aceita uma nova conexão de cliente
+  conn, addr = sock.accept()
+  
+  # cria uma nova thread para tratar a conexão de cliente
+  thread = threading.Thread(target=handle_client, args=(conn, addr))
+  
+  # inicia a thread
+  thread.start()
+
+#

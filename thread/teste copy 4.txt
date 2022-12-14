@@ -1,0 +1,40 @@
+Como fazer um codigo em python, que utiliza multithread , para realizar um cálculo de raiz quadrada.  O servidor enviará o numero para que as threads de dois clientes executem os calculos em paralelo ao final da execução do programa, as linhas de execução retornarão suas respostas (cálculos parciais) que serão unidos no servidor para a apresentação da resposta final.
+
+-----------------------
+-
+exemplo de servidor em python  utilizando socket, que recebe o resultado de uma raiz quadrada de 2 clientes simultaneos, que estão realziando o calculo em multhread, onde o servidor print a resposta final
+
+--------------
+exemplo de cliente  em python  utilizando socket, que realiza o calculo de raiz quadrada de em 2  threads simultaneas, e retorna o valor parcial para o servidor exibir a resposta final  
+
+
+-------------
+
+ exemplo de clientes  em python  utilizando socket, que realiza o calculo de raiz quadrada de em 2  threads simultaneas, e retorna o valor parcial docalculo de cada cliente para o servidor
+ 
+ ----------------
+ 
+ 
+ exemplo de servidor em python  utilizando socket, que  utiliza dos threads dos clientes para fazer o calculo prcial de uma raiz quadra e ao final o servidor recebe o resultados parcias junta eles para exibir o resultado final no servidor
+ 
+ 
+ -----------------------
+ 
+ Aqui está um exemplo de servidor em Python que utiliza sockets e threads para calcular a raiz quadrada de um número. O código é dividido em três partes: o servidor, o cliente e a função de cálculo da raiz quadrada.
+
+Servidor
+O servidor cria um socket e espera por conexões de dois clientes. Quando ambos os clientes se conectam, o servidor envia o número cuja raiz quadrada será calculada para cada um dos clientes. Cada cliente então calcula uma parte da raiz quadrada e envia o resultado de volta para o servidor. O servidor, por sua vez, recebe os resultados parciais dos clientes, junta-os e exibe o resultado final.
+
+
+-----------------------------
+
+Exemplo de servidor em Python que utiliza sockets e threads para calcular a raiz quadrada de um número. O código é dividido em três partes: o servidor, o cliente e a função de cálculo da raiz quadrada.
+
+O servidor cria um socket e espera por conexões de dois clientes. Quando ambos os clientes se conectam, o servidor envia o número cuja raiz quadrada será calculada para cada um dos clientes. Cada cliente então calcula uma parte da raiz quadrada e envia o resultado de volta para o servidor. O servidor, por sua vez, recebe os resultados parciais dos clientes, junta-os e exibe o resultado final.
+
+
+--------------------------------------
+
+Exemplo código em Python que utiliza sockets e threads para calcular a raiz quadrada de um número. O código é dividido em três partes: o servidor, o cliente e a função de cálculo da raiz quadrada.
+
+O servidor cria um socket e espera por conexões de dois clientes. Quando ambos os clientes se conectam, o servidor envia o número cuja raiz quadrada será calculada para cada um dos clientes. Cada cliente então calcula uma parte da raiz quadrada e envia o resultado de volta para o servidor. O servidor, por sua vez, recebe os resultados parciais dos clientes, junta-os e exibe o resultado final.
