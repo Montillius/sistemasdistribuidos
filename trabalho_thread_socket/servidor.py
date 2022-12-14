@@ -6,6 +6,7 @@
 #  -----------------------------------------------------------------------------------------------------------------
 
 import socket
+import operator
 
 ports = [5003, 5004]
 # As portas permitem que os servidores diferenciem facilmente entre diferentes tipos de tráfego:
@@ -47,7 +48,7 @@ for i in range(2):
     lista_server_socket.append(server_socket)
     # adciona o socket server na lista
 
-print("Servidor rodando...")
+print("Esperando conexões...")
 
 for server_socket in lista_server_socket:
     index = lista_server_socket.index(server_socket)
@@ -64,15 +65,15 @@ for server_socket in lista_server_socket:
     print('Conectado por ', lista_clients[index])
     # Ao estabelecer uma conexão com o clinte irá printar está conexão pro servidor
 
-result_client1 = str(lista_conns[0].recv(16384).decode())
+result_client1 = str(lista_conns[0].recv(16384).decode()).replace('[', '').replace(']',', ')
 # Aguarda a resposta do cliente 1, a quantidade de bytes é escolhida pelo usuário
 
-result_client2 = str(lista_conns[1].recv(16384).decode())
+result_client2 = str(lista_conns[1].recv(16384).decode()).replace('[', '').replace(']','')
 # Aguarda a resposta do cliente 1, a quantidade de bytes é escolhida pelo usuário
 
 
-lista_primos = result_client2 + result_client1
+lista_primos = operator.add(result_client1, result_client2)
 # O resultado final obtido pelos dois clientes
 
 
-print('Lista de primos de 1 a 5000 ', lista_primos)
+print('\nNesta lista podemos ver todos os números primos de 1 a 5000: \n', lista_primos)

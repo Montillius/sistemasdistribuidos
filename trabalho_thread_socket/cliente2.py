@@ -12,6 +12,8 @@ client_socket = socket.socket()
 # Instância do objeto do tipo socket no formatto TCP/IP
 
 client_socket.connect((HOST, PORTA))
+
+
 # a fução connect estabele a conexão com o servidor
 # Quando a connect (conexão) foi estabelecida, o soquete pode ser utilizado para enviar uma solicitação de
 # texto para o servidor. O mesmo soquete é que irá ler a resposta.
@@ -23,6 +25,7 @@ def is_prime(n):
         if n % i == 0:
             return False
     return True
+
 
 # Função que executa a thread
 def thread_function(start, end):
@@ -36,14 +39,12 @@ def thread_function(start, end):
     print(prime_numbers)
     client_socket.send(str(prime_numbers).encode())
 
+
 # Cria as threads
-thread2 = threading.Thread(target=thread_function, args=(251, 500))
+thread2 = threading.Thread(target=thread_function, args=(2501, 5000))
 
 # Inicia as thread
 thread2.start()
 
 # Aguarda que a thread termine
 thread2.join()
-
-
-
