@@ -68,7 +68,7 @@ trials = sys.argv[0]
 print("Verificando servidores ativos")
 # verifica o numero de servidores ativos
 
-servidores = ativos([socket.gethostname(), '198.23.2.2', '200.21.12.2', '198.56.25.2'])
+servidores = ativos(['198.23.2.2', '200.21.12.2', '198.56.25.2', socket.gethostname()])
 
 if len(servidores) == 0:
     print("Nao existem servidores ativos")

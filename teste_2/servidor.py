@@ -3,9 +3,9 @@ import random
 
 import socket
 
-
-
 # funcao que faz o calculo do numero de pontos
+
+
 def pi(trials):
     hits = 0
     for i in range(trials):
