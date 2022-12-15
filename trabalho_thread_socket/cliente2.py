@@ -41,14 +41,10 @@ def thread_function(start, end):
 
 
 # Cria as threads
-thread = threading.Thread(target=thread_function, args=(100001, 110000))
-thread2 = threading.Thread(target=thread_function, args=(110001, 120000))
-thread3 = threading.Thread(target=thread_function, args=(120001, 130000))
-thread4 = threading.Thread(target=thread_function, args=(130001, 140000))
-thread5 = threading.Thread(target=thread_function, args=(140001, 150000))
-thread6 = threading.Thread(target=thread_function, args=(150001, 160000))
-thread7 = threading.Thread(target=thread_function, args=(160001, 170000))
-thread8 = threading.Thread(target=thread_function, args=(170001, 200000))
+thread = threading.Thread(target=thread_function, args=(5001,6000))
+thread2 = threading.Thread(target=thread_function, args=(6001,7000))
+thread3 = threading.Thread(target=thread_function, args=(7001,8000))
+thread4 = threading.Thread(target=thread_function, args=(8001,10000))
 
 
 # Inicia as thread
@@ -56,10 +52,6 @@ thread.start()
 thread2.start()
 thread3.start()
 thread4.start()
-thread5.start()
-thread6.start()
-thread7.start()
-thread8.start()
 
 
 

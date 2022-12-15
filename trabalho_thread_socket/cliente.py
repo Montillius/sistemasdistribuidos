@@ -42,7 +42,7 @@ def thread_function(start, end):
 
 
 # Cria as threads
-thread1 = threading.Thread(target=thread_function, args=(1, 100000))
+thread1 = threading.Thread(target=thread_function, args=(1, 5000))
 
 # Inicia as thread
 thread1.start()
