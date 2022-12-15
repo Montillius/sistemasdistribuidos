@@ -54,4 +54,8 @@ thread3.start()
 thread4.start()
 
 
-
+# Aguarda que a threadstermine
+thread.join()
+thread2.join()
+thread3.join()
+thread4.join()
