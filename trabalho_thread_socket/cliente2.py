@@ -41,21 +41,21 @@ def thread_function(start, end):
 
 
 # Cria as threads
-thread = threading.Thread(target=thread_function, args=(5001,6000))
-thread2 = threading.Thread(target=thread_function, args=(6001,7000))
-thread3 = threading.Thread(target=thread_function, args=(7001,8000))
-thread4 = threading.Thread(target=thread_function, args=(8001,10000))
-
+thread = threading.Thread(target=thread_function, args=(1, 10000))
+thread2 = threading.Thread(target=thread_function, args=(10001, 20000))
+thread3 = threading.Thread(target=thread_function, args=(20001, 30000))
+thread4 = threading.Thread(target=thread_function, args=(30001, 40000))
+thread5 = threading.Thread(target=thread_function, args=(40001, 50000))
+thread6 = threading.Thread(target=thread_function, args=(50001, 60000))
+thread7 = threading.Thread(target=thread_function, args=(60001, 70000))
+thread8 = threading.Thread(target=thread_function, args=(70001, 100000))
 
 # Inicia as thread
 thread.start()
 thread2.start()
 thread3.start()
 thread4.start()
-
-
-# Aguarda que a threadstermine
-thread.join()
-thread2.join()
-thread3.join()
-thread4.join()
+thread5.start()
+thread6.start()
+thread7.start()
+thread8.start()
