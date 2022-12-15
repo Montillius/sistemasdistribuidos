@@ -8,7 +8,7 @@
 import socket
 import operator
 
-ports = [5003, 5004]
+ports = [8383, 8585]
 # As portas permitem que os servidores diferenciem facilmente entre diferentes tipos de tráfego:
 # os e-mails vão para uma porta diferente daquela das páginas web, por exemplo,
 # É importe que seja instanciado em um valor acima de 1024, para que não haja conflito entre as demais portas já usadas

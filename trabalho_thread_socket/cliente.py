@@ -4,7 +4,7 @@ import threading
 HOST = '10.0.0.206'
 # o host tem que utilizar o endereço do servidor para se conectar
 
-PORTA = 5003
+PORTA = 8383
 # Usando a mesma analogia do server, a porta é por onde de fato os pacotes "entram" no servidor ou seja
 # é necessário que seja a mesma porta para que ocorra a comunicação e troca de dados
 
