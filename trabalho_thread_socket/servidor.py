@@ -76,4 +76,4 @@ lista_primos = operator.add(result_client1, result_client2)
 # O resultado final obtido pelos dois clientes
 
 
-print('\nNesta lista podemos ver todos os números primos de 1 a 5000: \n', lista_primos)
+print('\nNesta lista podemos ver todos os números primos de 1 a 200000: \n', lista_primos)
